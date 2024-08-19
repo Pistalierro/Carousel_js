@@ -1,0 +1,14 @@
+@use "variables" as *;
+
+*::before, *::after, * {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, serif;
+}
+
+.carousel {
+  position: relative;
+  height: 100vh;
+}
