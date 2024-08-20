@@ -110,7 +110,9 @@ class Carousel {
 	}
 
 	_pressKey(e) {
-		console.log(e.code);
+		if (e.code === this.ARROW_LEFT) this.prev()
+		if (e.code === this.ARROW_RIGHT) this.next()
+		if (e.code === this.SPACE) this._pausePlay()
 	}
 
 	_tick(flag = true) {
