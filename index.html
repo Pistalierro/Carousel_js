@@ -3,43 +3,48 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<title>Slider</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-	<link rel="stylesheet" href="assets/css/style.css">
+	<link
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+		rel="stylesheet">
+	<link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
 
-	<div class="carousel" id="carousel">
-		<div class="slides">
-			<div class="slide">1</div>
-			<div class="slide">2</div>
-			<div class="slide">3</div>
-			<div class="slide">4</div>
-			<div class="slide">5</div>
-		</div>
-
-		<div class="controls">
-			<div class="control"><span class="btn btn--pause-play"><i class="fa-solid fa-pause"></i></span></div>
-<!--			<i class="fa-solid fa-play"></i>-->
-			<div class="control"><span class="btn btn--prev"><i class="fa-solid fa-arrow-left"></i></span></div>
-			<div class="control"><span class="btn btn--next"><i class="fa-solid fa-arrow-right"></i></span></div>
-		</div>
-
-		<ol class="indicators">
-			<li class="indicator"></li>
-			<li class="indicator"></li>
-			<li class="indicator"></li>
-			<li class="indicator"></li>
-			<li class="indicator"></li>
-		</ol>
-
+<div class="carousel" id="carousel">
+	<div class="slides">
+		<div class="slide active" style="background-image: url(assets/img/1.jpg);"></div>
+		<div class="slide" style="background-image: url(assets/img/2.jpg);">3</div>
+		<div class="slide" style="background-image: url(assets/img/3.jpg);">4</div>
+		<div class="slide" style="background-image: url(assets/img/4.jpg);">5</div>
+		<div class="slide" style="background-image: url(assets/img/5.jpg);">2</div>
 	</div>
 
+	<div class="controls">
+		<div class="control control--pause"><span><i class="fa-solid fa-pause"></i></span>
+		</div>
+		<!--			<i class="fa-solid fa-play"></i>-->
+		<div class="control control--prev"><span><i
+			class="fa-solid fa-arrow-left"></i></span></div>
+		<div class="control control--next"><span><i
+			class="fa-solid fa-arrow-right"></i></span></div>
+	</div>
 
-	<script src="assets/js/main.js"></script>
+	<ol class="indicators">
+		<li class="indicator active"></li>
+		<li class="indicator"></li>
+		<li class="indicator"></li>
+		<li class="indicator"></li>
+		<li class="indicator"></li>
+	</ol>
+
+</div>
+
+
+<script src="assets/js/main.js"></script>
 </body>
 
 </html>

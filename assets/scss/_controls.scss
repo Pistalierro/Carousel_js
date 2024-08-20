@@ -1,0 +1,59 @@
+@use "variables" as *;
+
+.controls {
+	position: absolute;
+	top: 50%;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	gap: $gap;
+	font-size: 1.5rem;
+}
+
+.control {
+	display: block;
+	padding: $gap * 0.25 $gap;
+	cursor: pointer;
+	user-select: none;
+	color: $color-light;
+	border: 2px solid $color-dark;
+	border-radius: 7px;
+	transition: background-color 0.3s ease;
+	font-size: 2rem;
+	box-shadow: 0 0 ($gap * 0.5) $color-light;
+
+	&:hover {
+		background-color: $color-dark;
+
+	}
+
+	&--pause {
+		display: block;
+		width: $gap * 4;
+		height: $gap * 2.5;
+		text-align: center;
+	}
+
+	&--prev {
+		position: absolute;
+		left: $gap *2;
+		order: -1;
+	}
+
+	&--next {
+		position: absolute;
+		right: $gap *2;
+	}
+}
+
+.control--pause {
+	position: relative;
+
+	> span {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}

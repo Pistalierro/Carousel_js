@@ -1,2 +1,48 @@
 @use "variables" as *;
 
+.slides {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -999;
+}
+
+.slide {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	opacity: 0;
+	background-color: lightgrey;
+	background-position: 50% 50%;
+	background-size: cover;
+
+	&:nth-of-type(1) {
+		background-color: red;
+	}
+
+	&:nth-of-type(2) {
+		background-color: blue;
+	}
+
+	&:nth-of-type(3) {
+		background-color: green;
+	}
+
+	&:nth-of-type(4) {
+		background-color: yellow;
+	}
+
+	&:nth-of-type(5) {
+		background-color: indigo;
+	}
+
+	&.active {
+		z-index: 1;
+		opacity: 1;
+	}
+
+}

@@ -359,3 +359,157 @@ html {
 
   height: 100vh;
 }
+
+.slides {
+  position: absolute;
+  z-index: -999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  opacity: 0;
+  background-color: lightgrey;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+.slide:nth-of-type(1) {
+  background-color: red;
+}
+.slide:nth-of-type(2) {
+  background-color: blue;
+}
+.slide:nth-of-type(3) {
+  background-color: green;
+}
+.slide:nth-of-type(4) {
+  background-color: yellow;
+}
+.slide:nth-of-type(5) {
+  background-color: indigo;
+}
+.slide.active {
+  z-index: 1;
+
+  opacity: 1;
+}
+
+.controls {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+  width: 100%;
+
+  font-size: 1.5rem;
+
+  gap: 20px;
+}
+
+.control {
+  display: block;
+
+  padding: 5px 20px;
+
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: background-color 0.3s ease;
+          transition: background-color 0.3s ease;
+
+  color: #ffffff;
+  border: 2px solid black;
+  border-radius: 7px;
+  -webkit-box-shadow: 0 0 10px #ffffff;
+          box-shadow: 0 0 10px #ffffff;
+
+  font-size: 2rem;
+}
+.control:hover {
+  background-color: black;
+}
+.control--pause {
+  display: block;
+
+  width: 80px;
+  height: 50px;
+
+  text-align: center;
+}
+.control--prev {
+  position: absolute;
+  left: 40px;
+
+  -webkit-box-ordinal-group: 0;
+  -ms-flex-order: -1;
+  order: -1;
+}
+.control--next {
+  position: absolute;
+  right: 40px;
+}
+
+.control--pause {
+  position: relative;
+}
+.control--pause > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.indicators {
+  position: absolute;
+  bottom: 20px;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  gap: 20px;
+}
+
+.indicator {
+  display: block;
+
+  width: 50px;
+  height: 10px;
+
+  text-align: center;
+
+  border: 2px solid #ffffff;
+  border-radius: 7px;
+}
+.indicator.active {
+  background-color: #ffffff;
+}
