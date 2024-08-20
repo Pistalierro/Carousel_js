@@ -1,12 +1,13 @@
 class Carousel {
-	constructor() {
+	constructor(p) {
+		const s = {...{containerID: '#carousel', slideId: 'slides', interval: 3000, isPlaying: true}, ...p}
 		this.container = document.querySelector('#carousel');
 		this.slides = document.querySelectorAll('.slide');
+		this.interval = s.interval
+		this.isPlaying = s.isPlaying
 	}
 
 	_initProps() {
-		this.interval = 1000
-		this.isPlaing = false
 		this.currentSlide = 0;
 		this.SLIDES_LENGTH = this.slides.length;
 		this.FA_PAUSE = `<i class="fa-solid fa-pause"></i>`
@@ -47,7 +48,7 @@ class Carousel {
 		this.pauseIcon = controls.querySelector('#fa-pause-icon');
 		this.playIcon = controls.querySelector('#fa-play-icon');
 
-		this.isPlaing ? this._pauseVisible() : this._playVisible()
+		this.isPlaying ? this._pauseVisible() : this._playVisible()
 	}
 
 	_pauseVisible(isVisible = true) {
@@ -87,18 +88,18 @@ class Carousel {
 
 	_pause() {
 		clearInterval(this.timerId);
-		this.isPlaing = false;
+		this.isPlaying = false;
 		this._playVisible()
 	}
 
 	_play() {
 		this._tick()
-		this.isPlaing = true
+		this.isPlaying = true
 		this._pauseVisible()
 	}
 
 	_pausePlay() {
-		this.isPlaing ? this._pause() : this._play()
+		this.isPlaying ? this._pause() : this._play()
 	}
 
 	_indicate(e) {
@@ -120,18 +121,13 @@ class Carousel {
 		this.timerId = setInterval(() => this._goToNext(), this.interval);
 	}
 
-	_swipeStart(e) {
-		console.log(e);
-	}
-
-	_swipeEnd(e) {
-	}
-
 	_initListeners() {
 		this.pausePlayBtn.addEventListener('click', this._pausePlay.bind(this));
 		this.prevBtn.addEventListener('click', this.prev.bind(this));
 		this.nextBtn.addEventListener('click', this.next.bind(this));
 		this.indicatorsContainer.addEventListener('click', this._indicate.bind(this));
+		this.pausePlayBtn.addEventListener('mouseenter', this._pause.bind(this));
+		this.pausePlayBtn.addEventListener('mouseleave', this._play.bind(this));
 		document.addEventListener('keydown', this._pressKey.bind(this));
 	}
 
@@ -149,7 +145,7 @@ class Carousel {
 		this._initProps()
 		this._initControls()
 		this._initIndicators()
-		this._tick(this.isPlaing)
+		this._tick(this.isPlaying)
 		this._initListeners()
 	}
 }
