@@ -1,6 +1,6 @@
-import Carousel from './extra/carousel.js'
+import SwipeCarousel from './extra/swipeCarousel.js';
 
-const carousel = new Carousel();
+const carousel = new SwipeCarousel();
 
 carousel.init();
 

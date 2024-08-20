@@ -120,6 +120,13 @@ class Carousel {
 		this.timerId = setInterval(() => this._goToNext(), this.interval);
 	}
 
+	_swipeStart(e) {
+		console.log(e);
+	}
+
+	_swipeEnd(e) {
+	}
+
 	_initListeners() {
 		this.pausePlayBtn.addEventListener('click', this._pausePlay.bind(this));
 		this.prevBtn.addEventListener('click', this.prev.bind(this));
