@@ -1,26 +1,27 @@
 @use "variables" as *;
 
 .indicators {
-  position: absolute;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  bottom: $gap;
-  gap: $gap;
-  width: 100%;
+	position: absolute;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	bottom: $gap;
+	gap: $gap;
+	width: 100%;
 }
 
 .indicator {
-  display: block;
-  text-align: center;
-  height: $gap * 0.5;
-  width: $gap * 2.5;
-  border: 2px solid $color-light;
-  border-radius: 7px;
+	display: block;
+	text-align: center;
+	height: $gap * 0.5;
+	width: $gap * 2.5;
+	border: 1px solid $color-light;
+	border-radius: 7px;
+	box-shadow: 0 0 ($gap * 0.5) $color-light;
 
-  &.active {
-    background-color: $color-light;
-  }
+	&.active {
+		background-color: $color-light;
+	}
 }

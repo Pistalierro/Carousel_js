@@ -2,11 +2,9 @@ import SwipeCarousel from './extra/swipeCarousel.js';
 
 const carousel = new SwipeCarousel({
 	// containerID: '#carousel',
-	// slideID: '.slides',
-	// interval: 1000,
-	// isPlaying: false
-});
+	// slideID: '.slide',
+	// isPlaying: false,
+	// interval: 1000
+})
 
-carousel.init();
-
-
+carousel.init()

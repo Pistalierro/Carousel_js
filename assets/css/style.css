@@ -381,21 +381,6 @@ html {
   background-position: 50% 50%;
   background-size: cover;
 }
-.slide:nth-of-type(1) {
-  background-color: red;
-}
-.slide:nth-of-type(2) {
-  background-color: blue;
-}
-.slide:nth-of-type(3) {
-  background-color: green;
-}
-.slide:nth-of-type(4) {
-  background-color: yellow;
-}
-.slide:nth-of-type(5) {
-  background-color: indigo;
-}
 .slide.active {
   z-index: 1;
 
@@ -507,8 +492,10 @@ html {
 
   text-align: center;
 
-  border: 2px solid #ffffff;
+  border: 1px solid #ffffff;
   border-radius: 7px;
+  -webkit-box-shadow: 0 0 10px #ffffff;
+          box-shadow: 0 0 10px #ffffff;
 }
 .indicator.active {
   background-color: #ffffff;
