@@ -5,7 +5,7 @@ class Carousel {
 		if (!this.container) {
 			throw new Error(`Container with ID ${s.containerID} not found.`);
 		}
-		
+
 		this.slides = this.container.querySelectorAll(s.slideID);
 		if (!this.slides.length) {
 			throw new Error(`No slides found with ID ${s.slideID} in the container.`);
@@ -22,7 +22,7 @@ class Carousel {
 		this.FA_PREV = `<i class="fa-solid fa-arrow-left"></i>`
 		this.FA_NEXT = `<i class="fa-solid fa-arrow-right"></i>`
 		this.ARROW_LEFT = 'ArrowLeft'
-		this.ARROW_Right = 'ArrowRight'
+		this.ARROW_RIGHT = 'ArrowRight'
 		this.SPACE = 'Space'
 	}
 
@@ -90,6 +90,7 @@ class Carousel {
 	}
 
 	_play() {
+		clearInterval(this.timerID)
 		this._tick()
 		this.isPlaying = true
 		this._pauseVisible()
@@ -106,7 +107,7 @@ class Carousel {
 
 	_pressKey(e) {
 		if (e.code === this.ARROW_LEFT) this.prev()
-		if (e.code === this.ARROW_Right) this.next()
+		if (e.code === this.ARROW_RIGHT) this.next()
 		if (e.code === this.SPACE) this.pausePlay()
 	}
 
